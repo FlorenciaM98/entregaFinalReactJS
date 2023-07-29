@@ -69,6 +69,7 @@ function Product({ cartList, setCartList } ) {
           <div className="chico_item-link">
             <Link to={`/product/${item.id}`}>Ver mas</Link>
           </div>
+          <div class="chico_item-price">${item.valor}</div>
           <form noValidate onSubmit={(e) => handleSubmit(e, item)} className="chico_item-form">
             <button type="button" onClick={() => handleMinus(item.id)}>
               -

@@ -1,0 +1,32 @@
+/* Categorias */
+
+.page_Container-products-category {
+    width: 70%;
+    height: 47% !important;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .page_Container-products-category_button {
+        margin-bottom: 10px;
+        width: -webkit-fill-available;
+        width: -moz-available;
+        background-color: #F26B6B;
+        font-family: "Arial";
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 15px;
+        text-transform: uppercase;
+
+        a {
+            color: $cFondoBasico;
+            font-weight: bold;
+        }
+    }
+}

@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../config/firebase";
+import { Link } from "react-router-dom";
 
 function CategoryDisplay({ cartList, setCartList }) {
 
     const [itemList, setItemList] = useState([]);
-
-    const [itemData, setItemData] = useState([]);
     const [quantities, setQuantities] = useState({});
-
     const { catId } = useParams();
     const itemsCollectionRef = collection(db, "items");
 
@@ -57,7 +55,7 @@ function CategoryDisplay({ cartList, setCartList }) {
       const handlePlus = (itemId) => {
         setQuantities((prevQuantities) => {
           const prevQuantity = prevQuantities[itemId] || 0;
-          const stock = itemData.find((item) => item.id === itemId).stock;
+          const stock = itemList.find((item) => item.id === itemId).stock;
           const newQuantity = prevQuantity + 1;
       
           return {
@@ -69,16 +67,36 @@ function CategoryDisplay({ cartList, setCartList }) {
     
 
     return (
-        <div className="page_Container">
-            {itemList.map((item) => (
-                <div key={item.id}>
+        <div className="page_Container-products-category">
+            <div className="page_Container-products-category_button">
+                <Link to="/store">Go back</Link>
+            </div>
+            <div className="page_Container-products">
+                {itemList.map((item) => (
+                    <div key={item.id} className="chico_item">
+                    <div className="chico_item-name">
                     {item.nombre}
-                    {item.desc}
-                    {item.img}
-                    {item.valor}
-                    <span>Category: {item.categoria}</span>
+                    </div>
+                    <img className="chico_item-img" src={item.img}></img>
+                    <div className="chico_item-link">
+                    <Link to={`/product/${item.id}`}>Ver mas</Link>
+                    </div>
+                    <form noValidate onSubmit={(e) => handleSubmit(e, item)} className="chico_item-form">
+                    <button type="button" onClick={() => handleMinus(item.id)}>
+                        -
+                    </button>
+                    <p>{quantities[item.id] || 1}</p>
+                    <button type="button" onClick={() => handlePlus(item.id)}>
+                        +
+                    </button>
+                    <button type="submit">Add to cart</button>
+                    </form>
                 </div>
-            ))}   
+                ))} 
+                <div className="link-checkout">
+                    <Link to="../checkout">Checkout</Link>
+                </div> 
+            </div>    
         </div>
     )
 }

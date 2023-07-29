@@ -73,6 +73,7 @@
             align-items: center;
             justify-content: center;
             padding: 2px;
+            color: $cCuerpo;
         }
 
         .chico_item-link {
@@ -87,6 +88,17 @@
                 color: $cSecundario;
             }
         }
+        
+        .chico_item-price {
+            padding: 5px;
+            margin-top: 5px;
+            background-color: $cFondoBClaro;
+            font-family: $fCuerpo;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: $cPrincipal;  
+        }
 
         .chico_item-form {
             @include filas;
@@ -95,6 +107,19 @@
             justify-content: center;
             margin-top: 5px;
             gap: 6px;
+
+
+
+            button {
+                cursor: pointer;
+                font-family: $fCuerpo;
+            }
+
+            p{
+                color: $cCuerpo;
+                font-family: $fEspecial;
+                font-size: 20px;
+            }
         }
     }
 }

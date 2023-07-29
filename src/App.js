@@ -31,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="store" element={<Store cartList={cartList} setCartList={setCartList} />} /> 
-            <Route path="cat/:catId" element={<CategoryDisplay />} />
+            <Route path="cat/:catId" element={<CategoryDisplay cartList={cartList} setCartList={setCartList}/>} />
             <Route path="product/:id" element={<ProductDisplay cartList={cartList} setCartList={setCartList}/>} />
             <Route path="cart" element={<Cart cartList={cartList} />} />
             <Route path="checkout" element={<Checkout cartList={cartList} />} />

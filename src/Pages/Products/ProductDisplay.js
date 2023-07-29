@@ -26,7 +26,7 @@ function ProductDisplay() {
         <div className="page_Container">
         {selectedItem ? (
             <div key={selectedItem.id}>
-            <h2 style={{ color: selectedItem.stock > 0 ? "green" : "red" }}>
+            <h2 >
                 {selectedItem.nombre}
             </h2>
             <p>{selectedItem.valor}</p>
