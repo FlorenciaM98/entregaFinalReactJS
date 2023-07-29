@@ -22,10 +22,12 @@ function Order() {
 
     return (
         <div className="page_Container">
-            Gracias por la compra
-            Tu ID de compra es {buyedItem}
-            Puedes volver al inicio haciendo
-            click <Link to="../../">aqui</Link>.
+            <div className="order">
+                Thank you for purchasing!<br/>
+                Your purchase id is: {buyedItem}<br/>
+                You can return home by clicking
+                <Link to="../../"> here</Link>.
+            </div>
         </div>
     )
 }

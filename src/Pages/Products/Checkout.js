@@ -81,7 +81,7 @@ function Checkout({ cartList, totalPrice }) {
                     </div> 
                 ))}
             </div>
-            <div className="total-price">
+            <div className="total-priceAtCheckout">
                     Total: ${totalPrice}
             </div>
             <div className="checkout-form">
