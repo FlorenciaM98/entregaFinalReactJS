@@ -10,6 +10,7 @@ import ProductDisplay from "./Pages/Products/ProductDisplay";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Products/Product";
 import Checkout from "./Pages/Products/Checkout";
+import Order from "./Pages/Products/Order";
 
 /* Components */
 import Navbar from "./Componentes_Recurrentes/Navbar";
@@ -34,6 +35,7 @@ function App() {
             <Route path="product/:id" element={<ProductDisplay />} />
             <Route path="cart" element={<Cart cartList={cartList} />} />
             <Route path="checkout" element={<Checkout cartList={cartList} />} />
+            <Route path="order" element={ <Order />} />
           </Route>
           <Route path="*" element={<Error />} />
           <Route path="/contact" element={<Contact/>} />

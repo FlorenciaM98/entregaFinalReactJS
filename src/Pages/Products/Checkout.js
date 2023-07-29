@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { db } from "../../config/firebase";
-import { collection } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 
 function Checkout({ cartList }) {
-
+    
     const [formData, setFormData] = useState({
         fname: "",
         fsurname: "",
@@ -11,7 +12,8 @@ function Checkout({ cartList }) {
         fmail: "",
         fmailRep: "",
     });
-    
+
+    const navigate = useNavigate();
     const ordersRef = collection(db, "ordenes");
     let totalPrice = 0;
     const [showPayButton, setShowPayButton] = useState(false);
@@ -31,11 +33,22 @@ function Checkout({ cartList }) {
             totalPrice += item.valor;
         }
     });
+
+    
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
+        await addDoc(ordersRef, {
+            name: formData.fname,
+            surname: formData.fsurname,
+            celphone: formData.fcp,
+            email: formData.fmail,
+            cart: cartList,
+            totalPrice
+        });
 
+        navigate("/order");
     };
     
     const handleChange = (e) => {
@@ -79,7 +92,7 @@ function Checkout({ cartList }) {
                 </form>
             </div>
    
-        </div>
+            </div>
     )
 }
 
