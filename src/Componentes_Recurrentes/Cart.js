@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 function Cart({ cartList, totalPrice }) {
     
-
     if (cartList.length === 0) {
         return (
             <div className="page_Container">
@@ -12,11 +11,7 @@ function Cart({ cartList, totalPrice }) {
     }
 
     cartList.forEach((item, i) => {
-        if (i = 0) {
-            totalPrice = item.valor;
-        } else {
-            totalPrice += item.valor;
-        }
+        totalPrice += parseInt(item.valor, 10);
     });
 
     return (

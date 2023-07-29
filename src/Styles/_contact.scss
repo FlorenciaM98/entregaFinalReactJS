@@ -1,0 +1,36 @@
+/* Contact */
+
+.page_Container-contact {
+    width: 40%;
+    height: fit-content !important;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    @include columnas;
+    gap: 5px;
+
+    .contact-field {
+        width: 100%;
+        height: 30px;
+        background-color: $cFondoBClaro;
+        line-height: 30px;
+        @include filas;
+        gap: 5px;
+
+        i {
+            margin-left: 5px;
+            line-height: 30px;
+            color: $cPrincipal;
+        }
+
+        span {
+            color: $cCuerpo;
+            font-family: $fCuerpo;
+            font-size: 14px;
+        }
+    }
+
+}

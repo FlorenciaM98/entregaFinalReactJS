@@ -27,15 +27,9 @@ function Checkout({ cartList, totalPrice }) {
     };
 
     cartList.forEach((item, i) => {
-        if (i = 0) {
-            totalPrice = item.valor;
-        } else {
-            totalPrice += item.valor;
-        }
+        totalPrice += parseInt(item.valor, 10);
     });
 
-    
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
         
