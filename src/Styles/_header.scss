@@ -1,0 +1,30 @@
+/* Header */
+
+img {
+    max-width: 600px;
+}
+
+.header_Container {
+    width: 50%;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    @include filas;
+    padding: 5px;
+}
+
+.header-gallery {
+    @include filas;
+    gap: 5px;
+}
+
+.header-gallery_img {
+    height: fit-content;
+
+    img {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+}

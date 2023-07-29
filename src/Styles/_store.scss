@@ -1,0 +1,100 @@
+/* Store */
+
+
+.store-header {
+
+    @include filas;
+    margin-bottom: 10px;
+
+    .store-title {
+        font-family: $fEspecial;
+        font-size: 40px;
+        color: $cPrincipal;
+    }
+
+    .store-links {
+        @include filas;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        width: -webkit-fill-available;
+        width: -moz-available;
+        font-family: $fCuerpo;
+        text-transform: uppercase;
+        font-size: 13px;
+
+        a {
+            color: $cSecundario;
+        }
+    }
+}
+
+.link-checkout {
+    margin-top: 10px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    background-color: $cSecundario;
+    font-family: $fCuerpo;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+
+    a {
+        color: $cFondoBasico;
+    }
+}
+
+.page_Container-products {
+    @include filas;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .chico_item {
+        width: 23%;
+        height: fit-content;
+    
+        .chico_item-img {
+            width: 100%;
+        }
+
+        .chico_item-name {
+            height: fit-content;
+            min-height: 30px;
+            margin-bottom: 5px;
+            font-family: $fCuerpo;
+            font-size: 13px;
+            background-color: $cFondoBClaro;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+        }
+
+        .chico_item-link {
+            padding: 5px;
+            background-color: $cFondoBClaro;
+            font-family: $fCuerpo;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 12px;
+            
+            a {
+                color: $cSecundario;
+            }
+        }
+
+        .chico_item-form {
+            @include filas;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+            gap: 6px;
+        }
+    }
+}

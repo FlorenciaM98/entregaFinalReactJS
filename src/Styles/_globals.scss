@@ -43,19 +43,11 @@ body {
     width: -moz-available;
     height: -webkit-fill-available;
     height: -moz-available;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 a {
     text-decoration: none;
-}
-
-.cartWidget {
-    font-family: $fCuerpo;
-    color: $cSecundario;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 10px;
 }
 
 .errorPage {
@@ -86,4 +78,45 @@ a {
     font-family: $fTitulo;
     color: $cSecundario;
     font-size: 28px;
+}
+
+.page_Container {
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.home-message {
+    width: 50%;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+    h1 {
+        margin: 0;
+        font-family: $fTitulo;
+        text-align: center;
+    }
+
+    p {
+        margin: 10px 0 0 0;
+        text-align: justify;
+        font-family: $fCuerpo;
+        font-size: 15px;
+    }
+}
+
+.page_Container-components {
+    width: 70%;
+    height: 47% !important;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

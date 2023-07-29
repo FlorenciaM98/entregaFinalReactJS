@@ -8,7 +8,7 @@ import Store from "./Pages/Products/Store";
 import CategoryDisplay from "./Pages/Products/CategoryDisplay";
 import ProductDisplay from "./Pages/Products/ProductDisplay";
 import Contact from "./Pages/Contact";
-import Product from "./Pages/Products/Product";
+
 import Checkout from "./Pages/Products/Checkout";
 import Order from "./Pages/Products/Order";
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="/" element={<Home />}>
             <Route path="store" element={<Store cartList={cartList} setCartList={setCartList} />} /> 
             <Route path="cat/:catId" element={<CategoryDisplay />} />
-            <Route path="product/:id" element={<ProductDisplay />} />
+            <Route path="product/:id" element={<ProductDisplay cartList={cartList} setCartList={setCartList}/>} />
             <Route path="cart" element={<Cart cartList={cartList} />} />
             <Route path="checkout" element={<Checkout cartList={cartList} />} />
             <Route path="order" element={ <Order />} />

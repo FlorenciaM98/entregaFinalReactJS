@@ -5,17 +5,18 @@ import Product from "./Product";
 function Store({ cartList, setCartList }) {
 
     return (
-        <div className="page_Container">
-            store titulo
-            <div>
-                <Link to="../cat/prevEra">Previous era</Link>
-                <Link to="../cat/actEra">Recent comeback</Link>
+        <div className="page_Container-components">
+            <div className="store-header">
+                <div className="store-title">Store</div>
+                <div className="store-links">
+                    <Link to="../cat/prevEra">Previous era</Link>
+                    <Link to="../cat/actEra">Recent comeback</Link>
+                </div>
             </div>
-
-            <div>
                 <Product cartList={cartList} setCartList={setCartList}></Product>
-            </div>
-            <Link to="../checkout">Checkout</Link>
+            <div className="link-checkout">
+                <Link to="../checkout">Checkout</Link>
+            </div> 
         </div>
     )
 }

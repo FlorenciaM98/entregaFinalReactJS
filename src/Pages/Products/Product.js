@@ -59,14 +59,17 @@ function Product({ cartList, setCartList } ) {
   };
 
   return (
-    <div className="page_Container">
+    <div className="page_Container-products">
       {itemData.map((item) => (
-        <div key={item.id}>
-          {item.nombre}
-          <span>Category: {item.categoria}</span>
-          <Link to={`/product/${item.id}`}>Ver mas</Link>
-
-          <form noValidate onSubmit={(e) => handleSubmit(e, item)}>
+        <div key={item.id} className="chico_item">
+          <div className="chico_item-name">
+            {item.nombre}
+          </div>
+          <img className="chico_item-img" src={item.img}></img>
+          <div className="chico_item-link">
+            <Link to={`/product/${item.id}`}>Ver mas</Link>
+          </div>
+          <form noValidate onSubmit={(e) => handleSubmit(e, item)} className="chico_item-form">
             <button type="button" onClick={() => handleMinus(item.id)}>
               -
             </button>

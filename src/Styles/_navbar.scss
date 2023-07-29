@@ -6,7 +6,7 @@
     height: -webkit-fill-available;
     height: -moz-available;
     background-color: $cFondoBasico;
-    width: 100px;
+    width: 200px;
     gap: 5px;
     @include columnas;
     padding: 5px;
@@ -19,12 +19,12 @@
 }
 
 .navBar-avatar {
-    width: 100px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
 
     img {
-        width: 100px;
-        height: 170px; 
+        width: 150px;
+        height: 150px; 
     }
     
 }
