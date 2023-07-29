@@ -1,0 +1,2 @@
+Esta web está ambientada en una tienda fisica que vende albumes de música K-pop, está enfocada en la banda llamada ATEEZ.
+Utilicé SASS para darle estilo porque lo prefiero por sobre el CSS plano y usé Fontawesome para agregar algunos iconos.
