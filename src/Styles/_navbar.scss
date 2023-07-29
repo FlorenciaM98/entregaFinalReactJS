@@ -1,0 +1,45 @@
+@import "/src/Styles/globals";
+
+/* Navbar */
+
+.navBar-container {
+    height: -webkit-fill-available;
+    height: -moz-available;
+    background-color: $cFondoBasico;
+    width: 100px;
+    gap: 5px;
+    @include columnas;
+    padding: 5px;
+    align-items: center;
+}
+
+.navBar-titulo {
+    font-family: $fTitulo;
+    color: $cPrincipal;
+}
+
+.navBar-avatar {
+    width: 100px;
+    height: 170px;
+
+    img {
+        width: 100px;
+        height: 170px; 
+    }
+    
+}
+
+.navBar-links {
+    @include columnas;
+    font-family: $fEspecial;
+    font-size: 20px;
+
+    a {
+        color: $cCuerpo;
+        text-transform: lowercase;
+    }
+
+    a.active {
+        color: $cPrincipal;
+    }
+}

@@ -1,0 +1,89 @@
+/* Globals */
+
+/* Mixins */
+
+@mixin columnas {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin filas {
+    display: flex;
+    flex-direction: row;
+}
+
+html {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    padding: 0;
+}
+
+body {
+    background-image: url("/imgs/Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    margin: 0;
+    display: flex !important;
+}
+
+#root {
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.body {
+    @include filas;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cartWidget {
+    font-family: $fCuerpo;
+    color: $cSecundario;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.errorPage {
+    background-color: $cFondoBasico;
+    font-family: $fCuerpo;
+    color: $cCuerpo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+
+    a {
+        margin-left: 5px;
+        color: $cSecundario;
+    }
+}
+
+.pages-title {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 70px;
+    background-color: $cFondoBasico;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $fTitulo;
+    color: $cSecundario;
+    font-size: 28px;
+}
