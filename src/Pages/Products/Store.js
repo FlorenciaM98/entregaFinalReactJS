@@ -15,7 +15,7 @@ function Store({ cartList, setCartList }) {
             <div>
                 <Product cartList={cartList} setCartList={setCartList}></Product>
             </div>
-            <Link to="../checkout">Pay</Link>
+            <Link to="../checkout">Checkout</Link>
         </div>
     )
 }

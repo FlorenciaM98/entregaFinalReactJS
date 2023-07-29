@@ -1,7 +1,9 @@
-function Cart({cartList}) {
+import { Link } from "react-router-dom";
+
+function Cart({ cartList }) {
     
 
-    if (cartList.length === []) {
+    if (cartList.length === 0) {
         return (
             <div className="page_Container">
                 <div>No items in the cart.</div>
@@ -19,6 +21,8 @@ function Cart({cartList}) {
                     {cItem.quantity}
                 </div> 
             ))}
+
+        <Link to="../checkout">Checkout</Link>
         </div>
     )
 }
