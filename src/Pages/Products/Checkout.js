@@ -3,7 +3,7 @@ import { db } from "../../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 
-function Checkout({ cartList }) {
+function Checkout({ cartList, totalPrice }) {
     
     const [formData, setFormData] = useState({
         fname: "",
@@ -15,13 +15,13 @@ function Checkout({ cartList }) {
 
     const navigate = useNavigate();
     const ordersRef = collection(db, "ordenes");
-    let totalPrice = 0;
+
     const [showPayButton, setShowPayButton] = useState(false);
 
     if (cartList.length === 0) {
         return (
             <div className="page_Container">
-                <div>No items in the cart.</div>
+                <div className="cartEmpty">No items in the cart.</div>
             </div>
         );
     };
@@ -67,16 +67,24 @@ function Checkout({ cartList }) {
 
 
     return (
-        <div className="page_Container">
-            {cartList.map((cItem) => (
-               <div key={cItem.id}>
-                    {cItem.nombre}
-                    <span>Category: {cItem.categoria}</span>
-                    {cItem.quantity}<br />
-                </div>   
-            ))}
-            <p>{totalPrice}</p>
-            <div>
+        <div className="page_Container-checkout">
+            <div className="checkout_itemContainer">
+                {cartList.map((cItem) => (
+                    <div key={cItem.id} className="checkout_item">
+                        <div className="checkout_item-name">
+                            {cItem.nombre}
+                        </div>
+                        <div className="checkout_item-row">
+                            <div><span>Quantity: </span>{cItem.quantity}</div>
+                            <div><span>Price f/e: </span>{cItem.valor}</div>
+                        </div>
+                    </div> 
+                ))}
+            </div>
+            <div className="total-price">
+                    Total: ${totalPrice}
+            </div>
+            <div className="checkout-form">
                 <form noValidate onSubmit={handleSubmit}>
                 <label htmlFor="fname">Name</label>
                 <input id="fname" placeholder="Name" type="text" value={formData.fname} onChange={handleChange} />
@@ -90,9 +98,8 @@ function Checkout({ cartList }) {
                 <input id="fmailRep" placeholder="Email" type="text" value={formData.fmailRep} onChange={handleChange} onBlur={handleEmailValidation}/>
                 {showPayButton && <button type="submit">Pay</button>}
                 </form>
-            </div>
-   
-            </div>
+            </div>        
+        </div>
     )
 }
 

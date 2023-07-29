@@ -23,6 +23,7 @@ import logo from "./imgs/avatarNavbar.jpg";
 function App() {
 
   const [cartList, setCartList] = useState([]);
+  let totalPrice = 0;
     
   return (
     <div className="body">
@@ -33,8 +34,8 @@ function App() {
             <Route path="store" element={<Store cartList={cartList} setCartList={setCartList} />} /> 
             <Route path="cat/:catId" element={<CategoryDisplay cartList={cartList} setCartList={setCartList}/>} />
             <Route path="product/:id" element={<ProductDisplay cartList={cartList} setCartList={setCartList}/>} />
-            <Route path="cart" element={<Cart cartList={cartList} />} />
-            <Route path="checkout" element={<Checkout cartList={cartList} />} />
+            <Route path="cart" element={<Cart cartList={cartList} totalPrice={totalPrice}/>} />
+            <Route path="checkout" element={<Checkout cartList={cartList} totalPrice={totalPrice} />} />
             <Route path="order" element={ <Order />} />
           </Route>
           <Route path="*" element={<Error />} />

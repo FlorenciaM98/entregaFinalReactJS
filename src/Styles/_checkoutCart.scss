@@ -1,0 +1,104 @@
+/* Checkout and Cart */
+
+.cartEmpty {
+    background-color: $cFondoBasico;
+    color: $cCuerpo;
+    text-align: center;
+    width: 50%;
+    height: 47% !important;
+    margin-left: auto;
+    margin-right: auto;
+    color: $cPrincipal;
+    font-family: $fEspecial;
+    font-size: 22px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.page_Container-checkout {
+    width: 50%;
+    height: 47% !important;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include columnas;
+    align-items: center;
+    justify-content: space-between;
+
+    .checkout_itemContainer {
+        @include columnas;
+        gap: 5px;
+        width: 100%;
+
+        .checkout_item {
+            background-color: $cFondoBClaro;
+            font-family: $fCuerpo;
+            color: $cCuerpo;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px;
+
+            .checkout_item-name {
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $cSecundario;
+            }
+
+            .checkout_item-row {
+                @include filas;
+                justify-content: center;
+                gap: 10px;
+
+                div {
+
+                    height: 30px;
+                    line-height: 30px;
+                    color: $cPrincipal;
+
+                    span {
+                        color: $cCuerpo;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .checkout_item-column {
+        @include columnas;
+        font-family: $fCuerpo;
+        font-size: 14px;
+        width: 100%;
+        
+        .total-price {
+            background-color: $cFondoBClaro;
+            height: 20px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: $cPrincipal;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        .linkToCheckout {
+            background-color: $cSecundario;
+            height: 20px;
+            line-height: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 5px;
+            font-weight: bold;
+
+            a {
+                color: $cFondoBasico;
+            }
+        }
+    }
+
+}
