@@ -17,12 +17,12 @@
         width: -webkit-fill-available;
         width: -moz-available;
         background-color: #F26B6B;
-        font-family: "Arial";
         height: 40px;
         line-height: 40px;
         text-align: center;
         font-size: 15px;
         text-transform: uppercase;
+        font-family: $fCuerpo;
 
         a {
             color: $cFondoBasico;

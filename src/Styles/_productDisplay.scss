@@ -1,0 +1,112 @@
+.itemNotFound {
+    background-color: $cFondoBasico;
+    color: $cCuerpo;
+    text-align: center;
+    width: 50%;
+    height: 47% !important;
+    margin-left: auto;
+    margin-right: auto;
+    color: $cPrincipal;
+    font-family: $fEspecial;
+    font-size: 22px;
+}
+
+.page_Container-itemsDisplay {
+    width: 50%;
+    height: fit-content !important;
+    padding: 5px;
+    height: fit-content;
+    background-color: $cFondoBasico;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .page_Container-itemGrande-goback {
+        margin-bottom: 10px;
+            width: -webkit-fill-available;
+            width: -moz-available;
+            background-color: #F26B6B;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-family: $fCuerpo;
+    
+            a {
+                color: $cFondoBasico;
+                font-weight: bold;
+            }
+    }
+
+    .grande_item {
+        width: 90%;
+        margin: 10px auto 0 auto;
+
+        .grande_item-name {
+            color: $cSecundario;
+            width: 100%;
+            text-align: center;
+            font-family: $fEspecial;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .grande_item-row {
+            @include filas;
+            gap: 5px;
+
+            img {
+                width: 50%;
+            
+            }
+
+            .grande_item-desc {
+                color: $cCuerpo;
+                font-family: $fCuerpo;
+                font-size: 14px;
+                text-align: justify;
+            }
+        }
+
+        .grande_item-price {
+            width: 100%;
+            background-color: $cPrincipal;
+            padding: 5px 0 5px 0;
+            margin-top: 5px;
+            text-align: center;
+            font-family: $fCuerpo;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            color: $cFondoBasico;
+        }
+
+        .grande_item-form {
+            @include filas;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+            gap: 6px;
+            background-color: $cFondoBClaro;
+            padding: 5px 0 5px 0;
+            margin-bottom: 20px;
+
+
+            button {
+                cursor: pointer;
+                font-family: $fCuerpo;
+            }
+
+            p{
+                color: $cCuerpo;
+                font-family: $fEspecial;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
